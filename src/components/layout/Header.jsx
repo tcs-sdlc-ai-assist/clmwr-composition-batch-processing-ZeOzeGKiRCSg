@@ -1,6 +1,6 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
-const appTitle = import.meta.env.VITE_APP_TITLE || 'CLMWR Encoding Validator';
+const appTitle = import.meta.env.VITE_APP_TITLE || "CLMWR Encoding Validator";
 
 /**
  * Global navigation header component.
@@ -20,32 +20,29 @@ export function Header() {
    */
   const navLinkClass = ({ isActive }) =>
     isActive
-      ? 'px-3 py-2 rounded-md text-sm font-semibold text-white bg-brand-700 transition-colors duration-150'
-      : 'px-3 py-2 rounded-md text-sm font-medium text-brand-100 hover:text-white hover:bg-brand-500 transition-colors duration-150';
+      ? "px-3 py-2 rounded-md text-sm font-semibold text-white bg-brand-700 transition-colors duration-150"
+      : "px-3 py-2 rounded-md text-sm font-medium text-brand-100 hover:text-white hover:bg-brand-500 transition-colors duration-150";
 
   return (
     <header className="bg-brand-600 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
-            <NavLink to="/" className="flex items-center gap-2 text-white no-underline">
-              <span className="text-lg font-bold tracking-tight">{appTitle}</span>
+            <NavLink
+              to="/"
+              className="flex items-center gap-2 text-white no-underline"
+            >
+              <span className="text-lg font-bold tracking-tight">
+                {appTitle}
+              </span>
             </NavLink>
-            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-warning-400 text-warning-900 uppercase tracking-wide">
-              DEMO ONLY
-            </span>
+            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-warning-400 text-warning-900 uppercase tracking-wide"></span>
           </div>
 
           <nav className="flex items-center gap-1" aria-label="Main navigation">
-            <NavLink to="/screen-a" className={navLinkClass}>
-              Screen A
-            </NavLink>
-            <NavLink to="/screen-b" className={navLinkClass}>
-              Screen B
-            </NavLink>
-            <NavLink to="/dashboard" className={navLinkClass}>
-              Dashboard
-            </NavLink>
+            <NavLink to="/screen-a" className={navLinkClass}></NavLink>
+            <NavLink to="/screen-b" className={navLinkClass}></NavLink>
+            <NavLink to="/dashboard" className={navLinkClass}></NavLink>
           </nav>
         </div>
       </div>

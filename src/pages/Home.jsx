@@ -21,9 +21,7 @@ export function Home() {
           1252 (Windows-1252) in healthcare claim processing workflows.
         </p>
         <div className="mt-4 inline-flex items-center px-3 py-1 rounded-full text-sm font-bold bg-warning-100 text-warning-800 uppercase tracking-wide">
-          <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-warning-400 text-warning-900 uppercase tracking-wide mr-2">
-            DEMO ONLY
-          </span>
+          <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-warning-400 text-warning-900 uppercase tracking-wide mr-2"></span>
           No real PII/PHI is used — all data is simulated
         </div>
       </div>
