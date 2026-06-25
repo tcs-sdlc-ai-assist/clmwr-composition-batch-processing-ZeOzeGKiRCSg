@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { FormField } from './FormField.jsx';
-import { DEFAULT_FORM_DATA, FIELD_LABELS, FIELD_DESCRIPTIONS } from '../../constants/mockData.js';
+import { DEFAULT_FORM_DATA, MOCK_DATA_VERSION, FIELD_LABELS, FIELD_DESCRIPTIONS } from '../../constants/mockData.js';
 import { saveInput, loadInput } from '../../services/persistenceService.js';
 import { validatePayload } from '../../services/simulatedBackendValidator.js';
 
@@ -53,8 +53,8 @@ const TEXTAREA_FIELDS = new Set(['notes', 'remittanceInfo']);
 export function DemoForm({ validationEnabled, screenKey }) {
   const [formData, setFormData] = useState(() => {
     const saved = loadInput(screenKey);
-    if (saved && typeof saved === 'object') {
-      return { ...DEFAULT_FORM_DATA, ...saved };
+    if (saved && typeof saved === 'object' && saved.__mockDataVersion === MOCK_DATA_VERSION) {
+      return { ...DEFAULT_FORM_DATA, ...saved.fields };
     }
     return { ...DEFAULT_FORM_DATA };
   });
@@ -64,10 +64,12 @@ export function DemoForm({ validationEnabled, screenKey }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   /**
-   * Persist form data to localStorage whenever it changes.
+   * Persist form data to localStorage whenever it changes, tagged with the
+   * current mock data version so future schema/content changes can detect
+   * and discard stale saves instead of being masked by them.
    */
   useEffect(() => {
-    saveInput(screenKey, formData);
+    saveInput(screenKey, { __mockDataVersion: MOCK_DATA_VERSION, fields: formData });
   }, [formData, screenKey]);
 
   /**
@@ -241,8 +243,6 @@ export function DemoForm({ validationEnabled, screenKey }) {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-6">
-      {renderSubmissionResult()}
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {FIELD_ORDER.map((fieldKey) => {
           const isTextarea = TEXTAREA_FIELDS.has(fieldKey);
@@ -294,6 +294,8 @@ export function DemoForm({ validationEnabled, screenKey }) {
           Clear Form
         </button>
       </div>
+
+      {renderSubmissionResult()}
     </form>
   );
 }

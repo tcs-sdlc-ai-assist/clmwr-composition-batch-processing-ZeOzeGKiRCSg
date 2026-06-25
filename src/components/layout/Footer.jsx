@@ -7,11 +7,14 @@
  */
 export function Footer() {
   return (
-    <footer className="bg-gray-800 text-gray-300 mt-auto">
+    <footer
+      style={{ display: "none" }}
+      className="bg-gray-800 text-gray-300 mt-auto"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-sm">
           <p className="text-center sm:text-left">
-            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-warning-400 text-warning-900 uppercase tracking-wide mr-2"></span>
+            {/* <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-warning-400 text-warning-900 uppercase tracking-wide mr-2"></span> */}
             This application uses simulated data only. No real PII/PHI is
             present.
           </p>

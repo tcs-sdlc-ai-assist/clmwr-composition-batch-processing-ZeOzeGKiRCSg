@@ -1,8 +1,8 @@
-import { useState, useCallback } from 'react';
-import { DemoForm } from '../components/form/DemoForm.jsx';
-import { ValidationLogPanel } from '../components/logging/ValidationLogPanel.jsx';
-import { AlertBanner } from '../components/monitoring/AlertBanner.jsx';
-import { useMonitoring } from '../hooks/useMonitoring.js';
+import { useState, useCallback } from "react";
+import { DemoForm } from "../components/form/DemoForm.jsx";
+import { ValidationLogPanel } from "../components/logging/ValidationLogPanel.jsx";
+import { AlertBanner } from "../components/monitoring/AlertBanner.jsx";
+import { useMonitoring } from "../hooks/useMonitoring.js";
 
 /**
  * Screen B page component — "Future State (Validation Enabled)".
@@ -24,10 +24,10 @@ export function ScreenB() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">
+        {/* <h1 className="text-2xl font-bold text-gray-900">
           Screen B — Codepage 1252 Validation (Future State)
-        </h1>
-        <div className="mt-3 rounded-md bg-success-50 border border-success-200 p-4">
+        </h1> */}
+        {/* <div className="mt-3 rounded-md bg-success-50 border border-success-200 p-4">
           <div className="flex items-start gap-3">
             <div
               className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-success-500 text-white"
@@ -48,12 +48,12 @@ export function ScreenB() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
-      {alerts.length > 0 && (
+      {/* {alerts.length > 0 && (
         <AlertBanner alerts={alerts} onDismiss={dismissAlert} />
-      )}
+      )} */}
 
       <DemoForm validationEnabled={true} screenKey="b" />
 

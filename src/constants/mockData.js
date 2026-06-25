@@ -7,6 +7,14 @@
  */
 
 /**
+ * Version tag for DEFAULT_FORM_DATA. Bump this whenever the mock data values
+ * change so that stale persisted form data (saved under an older version) is
+ * discarded instead of masking the new defaults.
+ * @type {number}
+ */
+export const MOCK_DATA_VERSION = 2;
+
+/**
  * Default form data pre-populated with realistic fake claim data.
  * Several fields intentionally contain non-Codepage 1252 characters
  * such as em dashes (—), smart quotes (\u201C \u201D), and Unicode symbols
@@ -16,14 +24,14 @@
 export const DEFAULT_FORM_DATA = {
   claimId: 'CLM-2024-00142',
   memberName: 'Jane D\u00F6e',
-  providerName: 'Dr. Ren\u00E9e \u201CSunny\u201D Thompson\u2014MD',
-  addressLine1: '742 Evergreen Terrace, Ste\u2009#3',
+  providerName: 'Dr. Ren\u00E9e "Sunny" Thompson-MD',
+  addressLine1: '742 Evergreen Terrace, Ste #3',
   addressLine2: 'Bldg \u2116 5 \u2014 East Wing',
-  city: 'Montr\u00E9al\u2010West',
+  city: 'Montr\u00E9al-West',
   state: 'CA',
   zipCode: '90210',
-  notes: 'Patient\u2019s follow\u2011up visit re: claim \u201CCLM-2024-00142\u201D. Diagnosis code\u2014J06.9. Paid \u20AC150.00 equiv. \u2248 $162.50. \u2022 Review pending.',
-  remittanceInfo: 'Remit to: Acct #8675309 \u2013 First National Bank\u2122. Ref\u2026 EOB\u00B9 attached. Amount: \u00A512,000 (\u2248 $82.17). Status: Approved \u2714',
+  notes: "Patient's follow-up visit re: claim \"CLM-2024-00142\". Diagnosis code-J06.9. Paid EUR150.00 equiv. ~$162.50. * Review pending.",
+  remittanceInfo: 'Remit to: Acct #8675309 \u2013 First National Bank\u2122. Ref... EOB\u00B9 attached. Amount: \u00A512,000 (~$82.17). Status: Approved Yes',
 };
 
 /**

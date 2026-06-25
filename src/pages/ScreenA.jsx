@@ -1,5 +1,5 @@
-import { DemoForm } from '../components/form/DemoForm.jsx';
-import { ValidationLogPanel } from '../components/logging/ValidationLogPanel.jsx';
+import { DemoForm } from "../components/form/DemoForm.jsx";
+import { ValidationLogPanel } from "../components/logging/ValidationLogPanel.jsx";
 
 /**
  * Screen A page component — "Current State (No Validation)".
@@ -16,10 +16,10 @@ export function ScreenA() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">
+        {/* <h1 className="text-2xl font-bold text-gray-900">
           Screen A — No Validation (Current State)
-        </h1>
-        <div className="mt-3 rounded-md bg-brand-50 border border-brand-200 p-4">
+        </h1> */}
+        {/* <div className="mt-3 rounded-md bg-brand-50 border border-brand-200 p-4">
           <div className="flex items-start gap-3">
             <div
               className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-brand-500 text-white"
@@ -39,7 +39,7 @@ export function ScreenA() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <DemoForm validationEnabled={false} screenKey="a" />

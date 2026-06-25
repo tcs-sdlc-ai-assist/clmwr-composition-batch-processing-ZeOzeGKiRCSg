@@ -37,14 +37,14 @@ export function Header() {
                 {appTitle}
               </span>
             </NavLink>
-            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-warning-400 text-warning-900 uppercase tracking-wide"></span>
+            {/* <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-warning-400 text-warning-900 uppercase tracking-wide"></span> */}
           </div>
 
-          <nav className="flex items-center gap-1" aria-label="Main navigation">
+          {/* <nav className="flex items-center gap-1" aria-label="Main navigation">
             <NavLink to="/screen-a" className={navLinkClass}></NavLink>
             <NavLink to="/screen-b" className={navLinkClass}></NavLink>
             <NavLink to="/dashboard" className={navLinkClass}></NavLink>
-          </nav>
+          </nav> */}
         </div>
       </div>
     </header>
