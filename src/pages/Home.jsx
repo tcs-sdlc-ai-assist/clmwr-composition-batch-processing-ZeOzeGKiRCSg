@@ -14,14 +14,16 @@ export function Home() {
       {/* Hero Section */}
       <div className="text-center">
         <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-          Claims Remittance Advice Update Screen
+          CLMWR Encoding Validator
         </h1>
         <p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
           A demo application for validating character encodings against Codepage
           1252 (Windows-1252) in healthcare claim processing workflows.
         </p>
         <div className="mt-4 inline-flex items-center px-3 py-1 rounded-full text-sm font-bold bg-warning-100 text-warning-800 uppercase tracking-wide">
-          <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-warning-400 text-warning-900 uppercase tracking-wide mr-2"></span>
+          {/* <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-warning-400 text-warning-900 uppercase tracking-wide mr-2">
+            DEMO ONLY
+          </span> */}
           No real PII/PHI is used — all data is simulated
         </div>
       </div>

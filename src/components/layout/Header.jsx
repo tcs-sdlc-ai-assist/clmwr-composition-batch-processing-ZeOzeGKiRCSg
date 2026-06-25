@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 
-const appTitle = import.meta.env.VITE_APP_TITLE || "CLMWR Encoding Validator";
+const appTitle =
+  import.meta.env.VITE_APP_TITLE || "Claims Remittance Advice Update Screen";
 
 /**
  * Global navigation header component.
